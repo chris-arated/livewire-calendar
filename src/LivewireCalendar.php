@@ -177,8 +177,8 @@ class LivewireCalendar extends Component
      */
     public function monthGrid()
     {
-        $firstDayOfGrid = $this->gridStartsAt->setTimezone('Europe/London');
-        $lastDayOfGrid = $this->gridEndsAt->setTimezone('Europe/London');
+        $firstDayOfGrid = $this->gridStartsAt->setTimezone(config('app.timezone'));
+        $lastDayOfGrid = $this->gridEndsAt->setTimezone(config('app.timezone'));
 
         $numbersOfWeeks = $lastDayOfGrid->diffInWeeks($firstDayOfGrid) + 1;
         $days = $lastDayOfGrid->diffInDays($firstDayOfGrid) + 1;
